@@ -1,0 +1,76 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Roboto:wght@500&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <div id="inputs">
+    <input id="game-complexity" placeholder="3" type="number" min="3" max="5" />
+  </div>
+
+  <div class="turn-indicator">
+    <p>Current Turn: <span id="current-turn">-</span></p>
+  </div>
+
+  <div class="buttons">
+    <button class="startbtn" onclick="startGame()"> Start Game </button>
+    <button class="resetbtn"  onclick="resetGame()">Reset Game</button>
+  </div>
+
+  <div id="board"></div>
+
+  <div class="popup" id="popup-win">
+    <div class="overlay"></div>
+    <div class="content">
+      <div class="close-btn" onclick="togglesPopup()">&times;</div>
+      <h1> The winner is...</h1>
+      <p> <span id="winner-id"></span></p>
+    </div>
+  </div>
+
+  <div class="popup" id="popup-start">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1> Press "Start Game" button for start</h1>
+      <br></br><button class="OK-btn" onclick="togglesPopupStart()">Ok</button>
+    </div>
+  </div>
+
+  <div class="popup" id="popup-TimeOver">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1>Time Over!</h1>
+      <br></br><button class="OK-btn" onclick="closePopupAndRestart()">Ok</button>
+    </div>
+  </div>
+
+  <div class="countDownTime">
+    <!-- Timer Title -->
+    <div class="timer-title">
+        <h1>Timer</h1>
+    </div>
+
+    <!-- Timer Values -->
+    <div class="timer-values">
+        <div class="time-box">
+            <p id="fewminutes">00:</p>
+            <span id="min">Minutes</span>
+        </div>
+        <div class="time-box">
+            <p id="seconds">00</p>
+            <span id="sec">Seconds</span>
+        </div>
+    </div>
+</div>
+
+
+
+  <script src="scripts.js"></script>
+</body>
+
+</html>
